@@ -1,0 +1,54 @@
+@media (max-width: 768px) {
+    header h1, header nav {
+        float: none;
+        text-align: center;
+    }
+    
+    header ul {
+        margin-top: 20px;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 10px 15px;
+    }
+
+    .tool-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.5em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        padding: 10px 10px;
+    }
+
+    .container {
+        max-width: 90%;
+    }
+
+    header ul {
+        padding: 0;
+    }
+
+    header li {
+        display: block;
+        margin: 10px 0;
+    }
+}

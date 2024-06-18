@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unix Timestamp Converter</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Unix Timestamp Converter</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Other Tools</a>
+                        <div class="dropdown-content">
+                            <a href="index.html">Unix Timestamp Converter</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="timestamp-converter">
+                    <h2>Timestamp Converter</h2>
+                    <label for="timestampInput">Convert Timestamp:</label>
+                    <input type="number" id="timestampInput" placeholder="1718573543">
+                    <p>Supports Unix timestamps in seconds, milliseconds, microseconds and nanoseconds.</p>
+                    <button id="convertTimestampButton">Convert</button>
+                </div>
+
+                <div class="current-time">
+                    <span id="timestampSeconds">1718573543</span>
+                    <p>SECONDS SINCE JAN 01 1970. (UTC)</p>
+                    <span id="timestampTime">12:34:10 AM</span>
+                    <button id="copyBtn">Copy</button>
+                </div>
+            </div>
+
+            <div class="result" id="result1">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="firstTd"><strong>Unix Timestamp</strong></td>
+                            <td id="timestamp">1718559813</td>
+                        </tr>
+                        <tr>
+                            <td class="firstTd"><strong>GMT</strong></td>
+                            <td id="gmt">Sun Jun 16 2024 17:43:33 GMT+0000</td>
+                        </tr>
+                        <tr>
+                            <td class="firstTd"><strong>Your Time Zone</strong></td>
+                            <td id="local">Sun Jun 16 2024 20:43:33 GMT+0300 (Източноевропейско лятно часово време)</td>
+                        </tr>
+                        <tr>
+                            <td class="firstTd"><strong>Relative</strong></td>
+                            <td id="relative">3 hours ago</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h2 id="convertDateTitle">Convert Date and Time to UNIX Timestamp</h2>
+            <div class="converter">
+                <div class="input-group">
+                    <label for="yearInput">Year:</label>
+                    <input type="number" id="yearInput" min="1970">
+                </div>
+                <div class="input-group">
+                    <label for="monthInput">Month:</label>
+                    <input type="number" id="monthInput" min="1" max="12">
+                </div>
+                <div class="input-group">
+                    <label for="dayInput">Day:</label>
+                    <input type="number" id="dayInput" min="1" max="31">
+                </div>
+                <div class="input-group">
+                    <label for="hourInput">Hour (24-hour):</label>
+                    <input type="number" id="hourInput" min="0" max="23">
+                </div>
+                <div class="input-group">
+                    <label for="minuteInput">Minute:</label>
+                    <input type="number" id="minuteInput" min="0" max="59">
+                </div>
+                <div class="input-group">
+                    <label for="secondInput">Second:</label>
+                    <input type="number" id="secondInput" min="0" max="59">
+                </div>
+                <button id="convertButton">Convert</button>
+            </div>
+
+            <div class="result" id="result2">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="firstTd"><strong>Unix Timestamp</strong></td>
+                            <td id="timestamp">1718559813</td>
+                        </tr>
+                        <tr>
+                            <td class="firstTd"><strong>GMT</strong></td>
+                            <td id="gmt">Sun Jun 16 2024 17:43:33 GMT+0000</td>
+                        </tr>
+                        <tr>
+                            <td class="firstTd"><strong>Your Time Zone</strong></td>
+                            <td id="local">Sun Jun 16 2024 20:43:33 GMT+0300 (Източноевропейско лятно часово време)</td>
+                        </tr>
+                        <tr>
+                            <td class="firstTd"><strong>Relative</strong></td>
+                            <td id="relative">3 hours ago</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <section class="epoch-description">
+                <h3>The current epoch translates to:</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="firstTd"><strong>Date</strong></th>
+                            <th class="firstTd"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="dateTime">06/16/2024 @ 8:33pm</td>
+                            <td><a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC</a></td>
+                        </tr>
+                        <tr>
+                            <td id="zoneDateTime">2024-06-16T20:33:46+00:00</td>
+                            <td><a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a></td>
+                        </tr>
+                        <tr>
+                            <td id="dayDate">Sun, 16 Jun 2024 20:33:46 +0000</td>
+                            <td>RFC <a href="https://tools.ietf.org/html/rfc822">822</a>, <a href="https://tools.ietf.org/html/rfc1036">1036</a>, <a href="https://tools.ietf.org/html/rfc1123">1123</a>, <a href="https://tools.ietf.org/html/rfc2822">2822</a></td>
+                        </tr>
+                        <tr>
+                            <td id="utcDate">Sunday, 16-Jun-24 20:33:46 UTC</td>
+                            <td><a href="https://tools.ietf.org/html/rfc2822">RFC 2822</a></td>
+                        </tr>
+                        <tr>
+                            <td id="rfcZoneDateTime">2024-06-16T20:33:46+00:00</td>
+                            <td><a href="https://datatracker.ietf.org/doc/html/rfc3339">RFC 3339</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="unix-timestamp-description">
+                <h3>What is the UNIX time stamp?</h3>
+                <p>The UNIX time stamp is a way to track time as a running total of seconds. This count starts at the UNIX Epoch on January 1st, 1970 at UTC. Therefore, the UNIX time stamp is merely the number of seconds between a particular date and the UNIX Epoch. It should also be pointed out that this point in time technically does not change no matter where you are located on the globe. This is very useful to computer systems for tracking and sorting dated information in dynamic and distributed applications both online and client-side.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="firstTd">Human Readable Time</th>
+                            <th class="firstTd">Seconds</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 Hour</td>
+                            <td>3600 Seconds</td>
+                        </tr>
+                        <tr>
+                            <td>1 Day</td>
+                            <td>86400 Seconds</td>
+                        </tr>
+                        <tr>
+                            <td>1 Week</td>
+                            <td>604800 Seconds</td>
+                        </tr>
+                        <tr>
+                            <td>1 Month (30.44 days)</td>
+                            <td>2629743 Seconds</td>
+                        </tr>
+                        <tr>
+                            <td>1 Year (365.24 days)</td>
+                            <td>31556926 Seconds</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>What happens on January 19, 2038?</h3>
+                <p>On this date, the UNIX Time Stamp will cease to work due to a 32-bit overflow. Before this moment, millions of applications will need to either adopt a new convention for time stamps or be migrated to 64-bit systems which will buy the time stamp a "bit" more time.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bojidar's Tools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../node_modules/dayjs/dayjs.min.js"></script>
+    <script src="scripts/updateTime.js"></script>
+    <script src="scripts/conversion.js"></script>
+    <script src="scripts/updateEpoch.js"></script>
+</body>
+</html>
