@@ -6,19 +6,21 @@ function calculateRelativeTime(timeDifference) {
     let months = Math.floor(days / 30);
     let years = Math.floor(months / 12);
 
-    if (years > 0) {
-        return `${years} years ago`;
-    } else if (months > 0) {
-        return `${months} months ago`;
-    } else if (days > 0) {
-        return `${days} days ago`;
-    } else if (hours > 0) {
-        return `${hours} hours ago`;
-    } else if (minutes > 0) {
-        return `${minutes} minutes ago`;
+    let result = "";
+    if (years != 0) {
+        result = (years > 0) ? `${years} ago` : `in ${years}`;
+    } else if (months != 0) {
+        result = (months > 0) ? `${months} ago` : `in ${months}`;
+    } else if (days != 0) {
+        result = (days > 0) ? `${days} ago` : `in ${days}`;
+    } else if (hours != 0) {
+        result = (hours > 0) ? `${hours} ago` : `in ${hours}`;
+    } else if (minutes != 0) {
+        result = (minutes > 0) ? `${minutes} ago` : `in ${minutes}`;
     } else {
-        return `${seconds} seconds ago`;
+        result = (seconds > 0) ? `${seconds} ago` : `in ${seconds}`;
     }
+    return result;
 }
 
 function updateTable(timestamp, gmtString, localString, relativeTime, isTimestampConverting) {
