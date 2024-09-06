@@ -8,17 +8,17 @@ function calculateRelativeTime(timeDifference) {
 
     let result = "";
     if (years != 0) {
-        result = (years > 0) ? `${years} ago` : `in ${years}`;
+        result = (years > 0) ? `${years} years ago` : `in ${Math.abs(years)} years`;
     } else if (months != 0) {
-        result = (months > 0) ? `${months} ago` : `in ${months}`;
+        result = (months > 0) ? `${months} months ago` : `in ${Math.abs(months)} months`;
     } else if (days != 0) {
-        result = (days > 0) ? `${days} ago` : `in ${days}`;
+        result = (days > 0) ? `${days} days ago` : `in ${Math.abs(days)} days`;
     } else if (hours != 0) {
-        result = (hours > 0) ? `${hours} ago` : `in ${hours}`;
+        result = (hours > 0) ? `${hours} hours ago` : `in ${Math.abs(hours)} hours`;
     } else if (minutes != 0) {
-        result = (minutes > 0) ? `${minutes} ago` : `in ${minutes}`;
+        result = (minutes > 0) ? `${minutes} minutes ago` : `in ${Math.abs(minutes)} minutes`;
     } else {
-        result = (seconds > 0) ? `${seconds} ago` : `in ${seconds}`;
+        result = (seconds > 0) ? `${seconds} seconds ago` : `in ${Math.abs(seconds)} seconds`;
     }
     return result;
 }
