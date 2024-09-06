@@ -1,4 +1,8 @@
 function calculateRelativeTime(timeDifference) {
+    let isInFuture = timeDifference < 0;
+    if (isInFuture) {
+        timeDifference = Math.abs(timeDifference);
+    }
     let seconds = Math.floor(timeDifference / 1000);
     let minutes = Math.floor(seconds / 60);
     let hours = Math.floor(minutes / 60);
@@ -6,21 +10,19 @@ function calculateRelativeTime(timeDifference) {
     let months = Math.floor(days / 30);
     let years = Math.floor(months / 12);
 
-    let result = "";
-    if (years != 0) {
-        result = (years > 0) ? `${years} years ago` : `in ${Math.abs(years)} years`;
-    } else if (months != 0) {
-        result = (months > 0) ? `${months} months ago` : `in ${Math.abs(months)} months`;
-    } else if (days != 0) {
-        result = (days > 0) ? `${days} days ago` : `in ${Math.abs(days)} days`;
-    } else if (hours != 0) {
-        result = (hours > 0) ? `${hours} hours ago` : `in ${Math.abs(hours)} hours`;
-    } else if (minutes != 0) {
-        result = (minutes > 0) ? `${minutes} minutes ago` : `in ${Math.abs(minutes)} minutes`;
+    if (years > 0) {
+        return (isInFuture) ? `in ${years} years` : `${years} years ago`
+    } else if (months > 0) {
+       return (isInFuture) ? `in ${months} months` : `${months} months ago`
+    } else if (days > 0) {
+        return (isInFuture) ? `in ${days} days` : `${days} days ago`
+    } else if (hours > 0) {
+        return (isInFuture) ? `in ${hours} hours` : `${hours} hours ago`
+    } else if (minutes > 0) {
+        return (isInFuture) ? `in ${minutes} minutes` : `${minutes} minutes ago`
     } else {
-        result = (seconds > 0) ? `${seconds} seconds ago` : `in ${Math.abs(seconds)} seconds`;
+        return (isInFuture) ? `in ${seconds} seconds` : `${seconds} seconds ago`
     }
-    return result;
 }
 
 function updateTable(timestamp, gmtString, localString, relativeTime, isTimestampConverting) {
